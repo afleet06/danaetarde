@@ -1,16 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Full Screen Background Video For Your Website Using HTML and CSS</title>
- <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
- <pre><div class="video-responsive">
-<iframe  src="rain.mp4" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-</div>
-<pre>
+
+
+<button onclick="openFullscreen();">VIDEO PANTALLA COMPLETA</button>
+
+<video width="100%" controls id="myvideo">
+  <source src="rain.mp4" type="video/mp4">
+  <source src="rain.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+
+<script>
+/* Get the element you want displayed in fullscreen */ 
+var elem = document.getElementById("myvideo");
+
+/* Function to open fullscreen mode */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+</script>
+
 </body>
 </html>
